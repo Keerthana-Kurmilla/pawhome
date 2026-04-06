@@ -106,7 +106,3 @@ Contributions are welcome. Fork the repository and submit pull requests for impr
 
 
 ---
-
-##  License
-
-This project is open-source and available under the MIT License.
