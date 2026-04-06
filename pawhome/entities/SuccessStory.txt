@@ -1,0 +1,53 @@
+{
+  "name": "SuccessStory",
+  "type": "object",
+  "properties": {
+    "pet_name": {
+      "type": "string"
+    },
+    "pet_type": {
+      "type": "string"
+    },
+    "adopter_name": {
+      "type": "string"
+    },
+    "story": {
+      "type": "string"
+    },
+    "before_image": {
+      "type": "string"
+    },
+    "after_image": {
+      "type": "string"
+    },
+    "date_adopted": {
+      "type": "string",
+      "format": "date"
+    },
+    "location": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "pet_name",
+    "story"
+  ],
+  "rls": {
+    "create": {},
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

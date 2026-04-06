@@ -1,0 +1,58 @@
+{
+  "name": "Pet",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Pet name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "dog",
+        "cat",
+        "rabbit",
+        "fish",
+        "parrot",
+        "bird",
+        "other"
+      ],
+      "description": "Type of pet"
+    },
+    "breed": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female",
+        "unknown"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "health_condition": {
+      "type": "string"
+    },
+    "vaccination_status": {
+      "type": "string",
+      "enum": [
+        "fully_vaccinated",
+        "partially_vaccinated",
+        "not_vaccinated",
+        "unknown"
+      ]
+    },
+    "reason_for_rehoming": {
+      "type": "string"
+    },
+    "feeding_habits": {
+      "type": "string"
+    },
+    "behavior_notes": {
+ 

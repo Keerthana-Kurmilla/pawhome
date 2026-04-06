@@ -1,0 +1,119 @@
+{
+  "name": "AdoptionRequest",
+  "type": "object",
+  "properties": {
+    "pet_id": {
+      "type": "string"
+    },
+    "pet_name": {
+      "type": "string"
+    },
+    "adopter_name": {
+      "type": "string"
+    },
+    "adopter_email": {
+      "type": "string"
+    },
+    "adopter_phone": {
+      "type": "string"
+    },
+    "adopter_location": {
+      "type": "string"
+    },
+    "adopter_lat": {
+      "type": "number"
+    },
+    "adopter_lng": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "lifestyle": {
+      "type": "string",
+      "enum": [
+        "active",
+        "moderate",
+        "busy",
+        "family"
+      ]
+    },
+    "home_type": {
+      "type": "string",
+      "enum": [
+        "apartment",
+        "house",
+        "farm",
+        "other"
+      ]
+    },
+    "pet_experience": {
+      "type": "string",
+      "enum": [
+        "first_time",
+        "some_experience",
+        "experienced"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "donor_email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pet_id"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "data.donor_email": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "data.donor_email": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

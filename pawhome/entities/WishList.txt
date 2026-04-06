@@ -1,0 +1,32 @@
+{
+  "name": "Wishlist",
+  "type": "object",
+  "properties": {
+    "pet_id": {
+      "type": "string",
+      "description": "ID of the wishlisted pet"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "notify_when_available": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "pet_id"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
