@@ -68,7 +68,7 @@ npm run dev
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 The application can be deployed using platforms such as:
 
@@ -88,7 +88,7 @@ The application can be deployed using platforms such as:
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 * AI-based pet matching system
 * Computer vision for pet recognition
